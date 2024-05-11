@@ -1,0 +1,26 @@
+#status_list {
+	position: absolute;
+	left   : 1.61%;
+	bottom : 19.1%;
+	width  : 15.50%; 
+    max-width: 268px;
+    min-width: 200px;
+}
+
+.status {
+	padding: 1px;
+	margin: -0.05em;
+}
+
+.status_ari {
+    z-index: 2;
+    height : 0.9em;
+	opacity: 0.4;
+}
+
+.status_val {
+    position: absolute;
+    z-index: 1;
+	height : 0.9em;
+	opacity: 0.8;
+}

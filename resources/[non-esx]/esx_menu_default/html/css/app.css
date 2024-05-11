@@ -1,0 +1,116 @@
+html {
+  overflow: hidden;
+
+  color:white;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  letter-spacing: 0.7px;
+  font-size:12px;
+
+  font-weight: 600;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+
+   text-shadow: 1px 1px 1px rgba(1,1,1,1);
+}
+
+.menu {
+  font-family: Arial;
+  min-width: 250px;
+  color: #fff;
+  position: absolute;
+}
+
+.menu.align-left {
+  left: 40;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.menu.align-top-left {
+  left: 10;
+  top: 130;
+}
+
+.menu.align-top {
+  left: 50%;
+  top: 40;
+  transform: translate(-50%, 0);
+}
+
+.menu.align-top-right {
+  right: 40;
+  top: 70;
+}
+
+.menu.align-right {
+  right: 40;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.menu.align-bottom-right {
+  right: 40;
+  bottom: 40;
+}
+
+.menu.align-bottom {
+  left: 50%;
+  bottom: 40;
+  transform: translate(-50%, 0);
+}
+
+.menu.align-bottom-left {
+  left: 40;
+  bottom: 40;
+}
+
+.menu.align-center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu .head {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 2px;
+  color: white;
+  margin-bottom: 8px;
+  text-align:left;
+}
+
+.menu .menu-items {
+  max-height: 424px;
+  overflow-y: hidden;
+}
+
+.menu .menu-items .menu-item {
+  background-color: rgba(40, 44, 58, 0.80);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 24px;
+  display: block;
+  transition-property: background-color, color;
+  transition-duration: 200ms;
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+}
+
+.menu-item-value {
+  margin-left: auto;
+}
+
+.menu .menu-items .menu-item:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.menu .menu-items .menu-item.selected,
+.menu .menu-items .menu-item:hover {
+  border: 2px solid rgb(255,255,255);
+}

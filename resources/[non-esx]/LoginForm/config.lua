@@ -1,0 +1,4 @@
+Notif = {
+    Custom = function()
+    end
+}

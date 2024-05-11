@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>by meerbi.design</title>
+<style id="applicationStylesheet" type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+	display: none;
+	user-select: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+* {
+	font-family: Poppins;
+}
+@-webkit-keyframes flip-in-hor-bottom {
+  0% {
+    -webkit-transform: rotateX(80deg);
+            transform: rotateX(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    opacity: 1;
+  }
+}
+@keyframes flip-in-hor-bottom {
+  0% {
+    -webkit-transform: rotateX(80deg);
+            transform: rotateX(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    opacity: 1;
+  }
+}
+
+
+	.mediaViewInfo {
+		--web-view-name: Canvas;
+		--web-view-id: Canvas;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-enable-scale-up: true;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Canvas;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Canvas {
+		position: absolute;
+		width: 1920px;
+		height: 1080px;
+		background-color: rgba(0,0,0,0);
+		overflow: hidden;
+		--web-view-name: Canvas;
+		--web-view-id: Canvas;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-enable-scale-up: true;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-enable-deep-linking: true;
+	}
+	#indeity {
+		position: absolute;
+		width: 1920px;
+		height: 1080px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#bg2 {
+		position: absolute;
+		width: 1920px;
+		height: 1080px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#bg {
+		-webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+		position: absolute;
+		width: 1004px;
+		height: 441px;
+		left: 458px;
+		top: 320px;
+		overflow: visible;
+	}
+	#Gruppe_27 {
+		-webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+		position: absolute;
+		width: 317px;
+		height: 373px;
+		left: 1102px;
+		top: 354px;
+		overflow: visible;
+	}
+	#Gruppe_26 {
+		position: absolute;
+		width: 317px;
+		height: 373px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#scarface_14 {
+		opacity: 0.302;
+		position: absolute;
+		width: 317px;
+		height: 373px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Gruppe_10 {
+		position: absolute;
+		width: 104.578px;
+		height: 24px;
+		left: 15px;
+		top: 12px;
+		overflow: visible;
+	}
+	#scarface_6 {
+		fill: rgba(248,10,15,1);
+	}
+	.scarface_6 {
+		position: absolute;
+		overflow: visible;
+		width: 2px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#Charakter_erstellen {
+		left: 10.578px;
+		top: 7.059px;
+		position: absolute;
+		overflow: visible;
+		width: 95px;
+		white-space: nowrap;
+		line-height: 12.500004768371582px;
+		margin-top: -1.0416674613952637px;
+		text-align: left;
+		font-family: Metropolis-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.416669845581055px;
+		color: rgba(255,255,255,1);
+	}
+	#Gruppe_25 {
+		position: absolute;
+		width: 80px;
+		height: 3px;
+		left: 118px;
+		top: 363px;
+		overflow: visible;
+	}
+	#scarface_10 {
+		position: absolute;
+		width: 80px;
+		height: 3px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#scarface_10_r {
+		fill: rgba(33,33,33,1);
+	}
+	.scarface_10_r {
+		position: absolute;
+		overflow: visible;
+		width: 80px;
+		height: 3px;
+		left: 0px;
+		top: 0px;
+	}
+	#Clip {
+		position: absolute;
+		width: 80px;
+		height: 3px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Gruppe_17 {
+		position: absolute;
+		width: 291px;
+		height: 291px;
+		left: 13px;
+		top: 47px;
+		overflow: visible;
+	}
+	#Gruppe_24 {
+		position: absolute;
+		width: 150px;
+		height: 30px;
+		left: 66px;
+		top: 261px;
+		overflow: visible;
+	}
+	#scarface_6_v {
+		fill: rgba(248,10,15,1);
+	}
+	.scarface_6_v {
+		position: absolute;
+		overflow: visible;
+		width: 150px;
+		height: 30px;
+		left: 0px;
+		top: 0px;
+	}
+	#ERSTELLEN {
+		left: 46px;
+		top: 6px;
+		position: absolute;
+		overflow: visible;
+		width: 65px;
+		white-space: nowrap;
+		line-height: 15.99999713897705px;
+		margin-top: -1.3333334922790527px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13.333330154418945px;
+		color: rgba(205,205,205,1);
+	}
+	#Gruppe_21 {
+		position: absolute;
+		width: 291px;
+		height: 195px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Gruppe_20 {
+		position: absolute;
+		width: 291px;
+		height: 33px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#scarface_4 {
+		opacity: 0.251;
+		fill: rgba(48,48,48,1);
+	}
+	.scarface_4 {
+		position: absolute;
+		overflow: visible;
+		width: 291px;
+		height: 33px;
+		left: 0px;
+		top: 0px;
+	}
+	#Vornamen_eingeben {
+		left: 19px;
+		top: 9px;
+		position: absolute;
+		overflow: visible;
+		width: 115px;
+		white-space: nowrap;
+		line-height: 12.500004768371582px;
+		margin-top: -1.0416674613952637px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.416669845581055px;
+		color: rgba(255,255,255,1);
+	}
+	#Gruppe_20_ {
+		position: absolute;
+		width: 291px;
+		height: 33px;
+		left: 0px;
+		top: 54px;
+		overflow: visible;
+	}
+	#scarface_4_ {
+		opacity: 0.251;
+		fill: rgba(48,48,48,1);
+	}
+	.scarface_4_ {
+		position: absolute;
+		overflow: visible;
+		width: 291px;
+		height: 33px;
+		left: 0px;
+		top: 0px;
+	}
+	#Nachname_eingeben {
+		left: 19px;
+		top: 9px;
+		position: absolute;
+		overflow: visible;
+		width: 118px;
+		white-space: nowrap;
+		line-height: 12.500004768371582px;
+		margin-top: -1.0416674613952637px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.416669845581055px;
+		color: rgba(255,255,255,1);
+	}
+	#Gruppe_20_ba {
+		position: absolute;
+		width: 291px;
+		height: 33px;
+		left: 0px;
+		top: 108px;
+		overflow: visible;
+	}
+	#scarface_4_ba {
+		opacity: 0.251;
+		fill: rgba(48,48,48,1);
+	}
+	.scarface_4_ba {
+		position: absolute;
+		overflow: visible;
+		width: 291px;
+		height: 33px;
+		left: 0px;
+		top: 0px;
+	}
+	#Geburtstag_eingeben {
+		left: 19px;
+		top: 9px;
+		position: absolute;
+		overflow: visible;
+		width: 119px;
+		white-space: nowrap;
+		line-height: 12.500004768371582px;
+		margin-top: -1.0416674613952637px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.416669845581055px;
+		color: rgba(255,255,255,1);
+	}
+	#Gruppe_20_bb {
+		position: absolute;
+		width: 291px;
+		height: 33px;
+		left: 0px;
+		top: 162px;
+		overflow: visible;
+	}
+	#scarface_4_bb {
+		opacity: 0.251;
+		fill: rgba(48,48,48,1);
+	}
+	.scarface_4_bb {
+		position: absolute;
+		overflow: visible;
+		width: 291px;
+		height: 33px;
+		left: 0px;
+		top: 0px;
+	}
+	#Krpergre_eingeben {
+		left: 19px;
+		top: 9px;
+		position: absolute;
+		overflow: visible;
+		width: 125px;
+		white-space: nowrap;
+		line-height: 12.500004768371582px;
+		margin-top: -1.0416674613952637px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.416669845581055px;
+		color: rgba(255,255,255,1);
+	}
+	#Gruppe_23 {
+		position: absolute;
+		width: 180px;
+		height: 17px;
+		left: 55px;
+		top: 219px;
+		overflow: visible;
+	}
+	#Gruppe_22 {
+		position: absolute;
+		width: 78px;
+		height: 17px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Ellipse_1 {
+		fill: rgba(248,10,15,1);
+	}
+	.Ellipse_1 {
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		height: 10px;
+		left: 0px;
+		top: 3px;
+	}
+	#Mnnlich {
+		left: 21px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 58px;
+		white-space: nowrap;
+		line-height: 15.000000953674316px;
+		margin-top: -1.2500004768371582px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgba(255,255,255,1);
+	}
+	#Gruppe_22_be {
+		position: absolute;
+		width: 74px;
+		height: 17px;
+		left: 106px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Ellipse_1_bf {
+		fill: rgba(42,42,42,1);
+	}
+	.Ellipse_1_bf {
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		height: 10px;
+		left: 0px;
+		top: 3px;
+	}
+	#Weiblich {
+		left: 21px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 54px;
+		white-space: nowrap;
+		line-height: 15.000000953674316px;
+		margin-top: -1.2500004768371582px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgba(255,255,255,1);
+	}
+	#Logo {
+		-webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+		position: absolute;
+		width: 115px;
+		height: 190px;
+		left: 581px;
+		top: 445px;
+		overflow: visible;
+	}
+	#char {
+		-webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+		position: absolute;
+		width: 282px;
+		height: 479px;
+		left: 782px;
+		top: 281px;
+		overflow: visible;
+	}
+input[type=text] {
+    background: transparent;
+    outline: none;
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 0.7rem;
+    color: #ababab;
+    text-align: left;
+    width: 150px;
+}
+.btn {
+    background-color: #f80a0f;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    color: #dedbde;
+    font-family: Poppins;
+    font-size: 13px;
+    padding: 7px 60px;
+    text-decoration: none;
+    margin-left: -55px;
+    margin-top: -10px;
+}
+.btn:hover {
+    background-color: #131313;
+}
+.radio-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  font-family: Poppins;
+  font-size: 13px;
+  cursor: pointer;
+  color: #666;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-container input:checked ~ .checkmark {
+  background-color: #fd0a0f;
+}
+
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.radio-container .checkmark:after {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #fd0a0f;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #141414;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+</style>
+<script id="applicationScript" type="text/javascript" src="rescale.js"></script>
+</head>
+<body>
+<div id="Canvas">
+	<div id="indeity">
+		<img id="bg2" src="https://cdn.discordapp.com/attachments/788240573382787114/853256136035532841/bg2.png">
+			
+		<img id="bg" src="https://cdn.discordapp.com/attachments/788240573382787114/853256180280983572/bg.png">
+			
+		<form id="register">
+			<form method="POST">
+				<div id="Gruppe_27">
+					<div id="Gruppe_26">
+						<img id="scarface_14" src="https://cdn.discordapp.com/attachments/788240573382787114/853256264707211294/scarface_14.png">
+							
+						<div id="Gruppe_10">
+							<svg class="scarface_6">
+								<rect id="scarface_6" rx="1" ry="1" x="0" y="0" width="2" height="24">
+								</rect>
+							</svg>
+							<div id="Charakter_erstellen">
+								<span>Crée votre passport</span>
+							</div>
+						</div>
+					</div>
+					<div id="Gruppe_25">
+						<div id="scarface_10">
+							<svg class="scarface_10_r">
+								<rect id="scarface_10_r" rx="1.5" ry="1.5" x="0" y="0" width="80" height="3">
+								</rect>
+							</svg>
+							<img id="Clip" src="https://cdn.discordapp.com/attachments/788240573382787114/853256322001534986/Clip.png">
+								
+							</svg>
+						</div>
+					</div>
+					<div id="Gruppe_17">
+						<div id="Gruppe_24">
+							<div id="ERSTELLEN">
+								<button class="btn" type="submit">ENTRER</button>
+							</div>
+						</div>
+						<div id="Gruppe_21">
+							<div id="Gruppe_20">
+								<svg class="scarface_4">
+									<rect id="scarface_4" rx="5" ry="5" x="0" y="0" width="291" height="33">
+									</rect>
+								</svg>
+								<div id="Vornamen_eingeben">
+									<input class="input--style-5" id="firstname" type="text" name="first_name" placeholder="Prénom...">
+								</div>
+							</div>
+							<div id="Gruppe_20_">
+								<svg class="scarface_4_">
+									<rect id="scarface_4_" rx="5" ry="5" x="0" y="0" width="291" height="33">
+									</rect>
+								</svg>
+								<div id="Nachname_eingeben">
+									<input class="input--style-5" id="lastname" type="text" name="last_name"placeholder="Nom de famille...">
+								</div>
+							</div>
+							<div id="Gruppe_20_ba">
+								<svg class="scarface_4_ba">
+									<rect id="scarface_4_ba" rx="5" ry="5" x="0" y="0" width="291" height="33">
+									</rect>
+								</svg>
+								<div id="Geburtstag_eingeben">
+									<input class="input--style-5" id="dateofbirth" type="text" name="company" placeholder="Date de naissance avec des /">
+								</div>
+							</div>
+							<div id="Gruppe_20_bb">
+								<svg class="scarface_4_bb">
+									<rect id="scarface_4_bb" rx="5" ry="5" x="0" y="0" width="291" height="33">
+									</rect>
+								</svg>
+								<div id="Krpergre_eingeben">
+									<input class="input--style-5" id="height" type="text" name="height"placeholder="Taille...">
+								</div>
+							</div>
+						</div>
+						<div id="Gruppe_23">
+                                <label class="radio-container m-r-55">Homme
+                                    <input type="checkbox" class="sex" value="m" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">Femme
+                                    <input type="checkbox" class="sex" value="f">
+                                    <span class="checkmark"></span>
+                                </label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</form>
+		<img id="Logo" src="https://cdn.discordapp.com/attachments/788240573382787114/853256438095937586/Logo.png">
+			
+		<img id="char" src="https://cdn.discordapp.com/attachments/788240573382787114/853256381201252382/char.png">
+			
+	</div>
+</div>
+<script src="script.js" type="text/javascript"></script>
+        <script>
+			$('checkmark').on('change', function() {
+			$('checkmark').not(this).prop('checked', false);
+			});
+		</script>
+</body>
+</html>
